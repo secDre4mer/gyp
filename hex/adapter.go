@@ -6,7 +6,7 @@ package hex
 import (
 	"fmt"
 	"io"
-	"io/ioutil"
+	"sync"
 
 	"github.com/VirusTotal/gyp/ast"
 	gyperror "github.com/VirusTotal/gyp/error"
@@ -14,6 +14,14 @@ import (
 
 func init() {
 	hexErrorVerbose = true
+}
+
+// Scanner objects are fairly large and when parsing YARA rules, we'll typically parse many hex strings.
+// This pool limits the overhead of allocating scanners by reusing them.
+var scannerPool = sync.Pool{
+	New: func() interface{} {
+		return NewScanner()
+	},
 }
 
 // Parse parses an hex string in a YARA rule from the provided input source
@@ -31,12 +39,17 @@ func Parse(input io.Reader) (tokens []ast.HexToken, err error) {
 		}
 	}()
 
+	scanner := scannerPool.Get().(*Scanner)
+	defer scannerPool.Put(scanner)
+
+	scanner.In = input
+	scanner.Out = io.Discard
+	scanner.NewFile()
+
 	lexer := lexer{
-		scanner:   *NewScanner(),
+		scanner:   scanner,
 		hexTokens: nil,
 	}
-	lexer.scanner.In = input
-	lexer.scanner.Out = ioutil.Discard
 
 	if result := hexParse(&lexer); result != 0 {
 		err = lexer.err
@@ -47,7 +60,7 @@ func Parse(input io.Reader) (tokens []ast.HexToken, err error) {
 
 // Lexer is an adapter that fits the flexgo lexer ("Scanner") into goyacc
 type lexer struct {
-	scanner   Scanner
+	scanner   *Scanner
 	insideOr  int
 	err       gyperror.Error
 	hexTokens []ast.HexToken
