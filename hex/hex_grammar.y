@@ -31,8 +31,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package hex
 
 import (
-  "github.com/VirusTotal/gyp/ast"
-  gyperror "github.com/VirusTotal/gyp/error"
+  "github.com/secDre4mer/gyp/ast"
+  gyperror "github.com/secDre4mer/gyp/error"
 )
 
 const StringChainingThreshold int = 200

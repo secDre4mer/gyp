@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/VirusTotal/gyp"
-	"github.com/VirusTotal/gyp/ast"
-	"github.com/VirusTotal/gyp/pb"
+	"github.com/secDre4mer/gyp"
+	"github.com/secDre4mer/gyp/ast"
+	"github.com/secDre4mer/gyp/pb"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -320,7 +320,6 @@ var postOrder = []string{
 	"them",
 	"10% of them",
 }
-
 
 type astVisitor struct {
 	preOrderResults  []string

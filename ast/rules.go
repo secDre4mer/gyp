@@ -6,7 +6,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/VirusTotal/gyp/pb"
+	"github.com/secDre4mer/gyp/pb"
 	"github.com/golang/protobuf/proto"
 )
 

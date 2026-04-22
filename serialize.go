@@ -9,9 +9,9 @@ import (
 	"math"
 	"strings"
 
-	"github.com/VirusTotal/gyp/ast"
+	"github.com/secDre4mer/gyp/ast"
 
-	"github.com/VirusTotal/gyp/pb"
+	"github.com/secDre4mer/gyp/pb"
 )
 
 // YaraSerializer converts a RuleSet from proto to YARA ruleset.

@@ -9,7 +9,7 @@ import (
     "os"
     "strconv"
 
-    gyperror "github.com/VirusTotal/gyp/error"
+    gyperror "github.com/secDre4mer/gyp/error"
 )
 
 type YYcontext struct {}

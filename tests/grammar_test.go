@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/VirusTotal/gyp"
-	"github.com/VirusTotal/gyp/ast"
+	"github.com/secDre4mer/gyp"
+	"github.com/secDre4mer/gyp/ast"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -1014,7 +1014,7 @@ func TestInvalidCharacters(t *testing.T) {
 	assert.NoError(t, err)
 }
 
-// Test case for https://github.com/VirusTotal/gyp/issues/50
+// Test case for https://github.com/secDre4mer/gyp/issues/50
 func TestIssue50(t *testing.T) {
 	_, err := gyp.ParseString(`
 	rule TEST {
@@ -1026,7 +1026,7 @@ func TestIssue50(t *testing.T) {
 	assert.Error(t, err)
 }
 
-// Test case for https://github.com/VirusTotal/gyp/issues/57
+// Test case for https://github.com/secDre4mer/gyp/issues/57
 func TestIssue57(t *testing.T) {
 	_, err := gyp.ParseString(`
   rule TEST {

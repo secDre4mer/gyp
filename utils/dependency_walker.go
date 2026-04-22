@@ -3,7 +3,7 @@ package utils
 import (
 	"fmt"
 
-	"github.com/VirusTotal/gyp/ast"
+	"github.com/secDre4mer/gyp/ast"
 )
 
 var yaraModules = []string{"pe", "elf", "cuckoo", "magic", "hash", "math", "dotnet", "time", "dex", "console", "string"}

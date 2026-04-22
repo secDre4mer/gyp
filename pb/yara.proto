@@ -3,7 +3,7 @@
 
 syntax = "proto2";
 
-option go_package = "github.com/VirusTotal/gyp/pb";
+option go_package = "github.com/secDre4mer/gyp/pb";
 
 // Rule modifiers.
 message RuleModifiers {

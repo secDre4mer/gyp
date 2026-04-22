@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/VirusTotal/gyp/ast"
+	"github.com/secDre4mer/gyp/ast"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -289,7 +289,7 @@ rule foo {
     foo(1, 2 + 3, 4) == bar()
 }
 `,
-    `
+	`
 rule foo {
   condition:
     defined some_value

@@ -3,8 +3,8 @@ package utils
 import (
 	"testing"
 
-	"github.com/VirusTotal/gyp"
-	"github.com/VirusTotal/gyp/ast"
+	"github.com/secDre4mer/gyp"
+	"github.com/secDre4mer/gyp/ast"
 	"github.com/google/go-cmp/cmp"
 )
 

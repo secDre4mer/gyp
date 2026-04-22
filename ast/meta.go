@@ -2,7 +2,7 @@ package ast
 
 import (
 	"fmt"
-	"github.com/VirusTotal/gyp/pb"
+	"github.com/secDre4mer/gyp/pb"
 	"github.com/golang/protobuf/proto"
 	"strconv"
 )

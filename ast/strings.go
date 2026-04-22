@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/VirusTotal/gyp/pb"
+	"github.com/secDre4mer/gyp/pb"
 	"github.com/golang/protobuf/proto"
 )
 
@@ -440,7 +440,7 @@ func (h *HexBytes) AsProto() *pb.BytesSequence {
 	return &pb.BytesSequence{
 		Value: h.Bytes,
 		Mask:  h.Masks,
-		Nots: h.Nots,
+		Nots:  h.Nots,
 	}
 }
 

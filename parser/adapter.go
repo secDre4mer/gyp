@@ -2,8 +2,8 @@ package parser
 
 import (
 	"fmt"
-	"github.com/VirusTotal/gyp/ast"
-	gyperror "github.com/VirusTotal/gyp/error"
+	"github.com/secDre4mer/gyp/ast"
+	gyperror "github.com/secDre4mer/gyp/error"
 	"io"
 	"io/ioutil"
 )
@@ -32,8 +32,8 @@ func Parse(input io.Reader) (rs *ast.RuleSet, err error) {
 			Imports: make([]string, 0),
 			Rules:   make([]*ast.Rule, 0),
 		},
-		strings: make(map[string]bool),
-		rules: make(map[string]bool),
+		strings:        make(map[string]bool),
+		rules:          make(map[string]bool),
 		rule_wildcards: make(map[string]bool),
 	}
 	lexer.scanner.In = input
@@ -103,7 +103,7 @@ func (l *lexer) Error(msg string) {
 // This uses whatever the current line the scanner is on. If you want to use
 // a specific line number use the setErrorWithLineNumber variant.
 func (l *lexer) setError(code gyperror.Code, format string, a ...interface{}) int {
-    return l.setErrorWithLineNumber(code, l.scanner.Lineno, format, a...)
+	return l.setErrorWithLineNumber(code, l.scanner.Lineno, format, a...)
 }
 
 // setErrorWithLineNumber sets the lexer error. The error message can be built

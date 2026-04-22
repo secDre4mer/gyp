@@ -12,9 +12,9 @@ import (
     "strings"
     "unicode/utf8"
 
-    "github.com/VirusTotal/gyp/ast"
-    "github.com/VirusTotal/gyp/hex"
-    gyperror "github.com/VirusTotal/gyp/error"
+    "github.com/secDre4mer/gyp/ast"
+    "github.com/secDre4mer/gyp/hex"
+    gyperror "github.com/secDre4mer/gyp/error"
 )
 
 type YYcontext struct {

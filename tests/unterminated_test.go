@@ -3,8 +3,8 @@ package tests
 import (
 	"testing"
 
-	"github.com/VirusTotal/gyp"
-	gyperror "github.com/VirusTotal/gyp/error"
+	"github.com/secDre4mer/gyp"
+	gyperror "github.com/secDre4mer/gyp/error"
 	"github.com/stretchr/testify/assert"
 )
 

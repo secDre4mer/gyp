@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/VirusTotal/gyp"
-	"github.com/VirusTotal/gyp/pb"
+	"github.com/secDre4mer/gyp"
+	"github.com/secDre4mer/gyp/pb"
 	"github.com/stretchr/testify/assert"
 )
 

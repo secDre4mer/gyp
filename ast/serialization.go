@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/VirusTotal/gyp/pb"
+	"github.com/secDre4mer/gyp/pb"
 )
 
 // RuleSetFromProto creates a RuleSet from its corresponding protobuf.
@@ -229,7 +229,7 @@ func hexTokensFromProto(pbTokens *pb.HexTokens) HexTokens {
 			tokens[i] = &HexBytes{
 				Bytes: v.Sequence.GetValue(),
 				Masks: v.Sequence.GetMask(),
-				Nots: v.Sequence.GetNots(),
+				Nots:  v.Sequence.GetNots(),
 			}
 		case *pb.HexToken_Alternative:
 			alternatives := make(HexTokens, len(v.Alternative.GetTokens()))

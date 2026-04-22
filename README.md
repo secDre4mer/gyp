@@ -1,5 +1,5 @@
-[![GoDoc](https://godoc.org/github.com/VirusTotal/gyp?status.svg)](https://godoc.org/github.com/VirusTotal/gyp)
-[![Go Report Card](https://goreportcard.com/badge/github.com/VirusTotal/gyp)](https://goreportcard.com/report/github.com/VirusTotal/gyp)
+[![GoDoc](https://godoc.org/github.com/secDre4mer/gyp?status.svg)](https://godoc.org/github.com/secDre4mer/gyp)
+[![Go Report Card](https://goreportcard.com/badge/github.com/secDre4mer/gyp)](https://goreportcard.com/report/github.com/secDre4mer/gyp)
 
 # gyp (go-yara-parser)
 
@@ -16,7 +16,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/VirusTotal/gyp"
+	"github.com/secDre4mer/gyp"
 )
 
 func main() {

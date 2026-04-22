@@ -8,8 +8,8 @@ import (
 	"io"
 	"sync"
 
-	"github.com/VirusTotal/gyp/ast"
-	gyperror "github.com/VirusTotal/gyp/error"
+	"github.com/secDre4mer/gyp/ast"
+	gyperror "github.com/secDre4mer/gyp/error"
 )
 
 func init() {

@@ -6,7 +6,7 @@ import (
 
 	jsonpb "github.com/golang/protobuf/jsonpb"
 
-	"github.com/VirusTotal/gyp"
+	"github.com/secDre4mer/gyp"
 )
 
 // global options

@@ -21,8 +21,8 @@ import (
 	"bytes"
 	"io"
 
-	"github.com/VirusTotal/gyp/ast"
-	"github.com/VirusTotal/gyp/parser"
+	"github.com/secDre4mer/gyp/ast"
+	"github.com/secDre4mer/gyp/parser"
 )
 
 // Parse parses a YARA rule from the provided input source.
