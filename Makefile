@@ -1,6 +1,6 @@
 FLEXGO ?= flexgo
 GOYACC ?= goyacc
-PROTOC ?= protoc-gen-go
+PROTOC ?= $(shell which protoc-gen-go)
 
 all: proto hexgrammar grammar y2j j2y
 
