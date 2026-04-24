@@ -303,7 +303,7 @@ u?int(8|16|32)(be)? {
           v *= 1048576
       }
   }
-  return yy.TokenInt64(_NUMBER_, v);
+  return yy.TokenInt64(_DECIMAL_NUMBER_, v);
 }
 
 {digit}+"."{digit}+  {

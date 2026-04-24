@@ -84,7 +84,7 @@ type stringModifiers struct {
 %token <s> _STRING_OFFSET_
 %token <s> _STRING_LENGTH_
 %token <s> _STRING_IDENTIFIER_WITH_WILDCARD_
-%token <i64> _NUMBER_
+%token <i64> _DECIMAL_NUMBER_
 %token <i64> _HEX_NUMBER_
 %token <i64> _OCT_NUMBER_
 %token <f64> _DOUBLE_
@@ -177,6 +177,7 @@ type stringModifiers struct {
 %type <ss>        text_string_set
 %type <ss>        text_string_enumeration
 %type <s>         text_string_enumeration_item
+%type <i64>       number
 
 
 %union {
@@ -465,14 +466,14 @@ meta_declaration
           Value: $3,
         }
       }
-    | _IDENTIFIER_ '=' _NUMBER_
+    | _IDENTIFIER_ '=' number
       {
         $$ = &ast.Meta{
           Key: $1,
           Value: $3,
         }
       }
-    | _IDENTIFIER_ '=' '-' _NUMBER_
+    | _IDENTIFIER_ '=' '-' number
       {
         $$ = &ast.Meta{
           Key: $1,
@@ -650,7 +651,7 @@ string_modifier
           XorMax: 255,
         }
       }
-    | _XOR_ '(' _NUMBER_ ')'
+    | _XOR_ '(' number ')'
       {
         $$ = stringModifiers{
           modifiers: ModXor,
@@ -658,7 +659,7 @@ string_modifier
           XorMax: int32($3),
         }
       }
-    | _XOR_ '(' _NUMBER_ '-' _NUMBER_ ')'
+    | _XOR_ '(' number '-' number ')'
       {
         lexer := asLexer(yrlex)
 
@@ -1349,6 +1350,19 @@ iterator
       }
     ;
 
+number
+	: _DECIMAL_NUMBER_
+	{
+		$$ = $1
+	}
+	| _HEX_NUMBER_
+	{
+		$$ = $1
+	}
+	| _OCT_NUMBER_
+	{
+		$$ = $1
+	};
 
 primary_expression
     : '(' primary_expression ')'
@@ -1371,7 +1385,7 @@ primary_expression
           Builtin: true,
         }
       }
-    | _NUMBER_
+    | _DECIMAL_NUMBER_
       {
         $$ = &ast.LiteralInteger{$1, 10}
       }
