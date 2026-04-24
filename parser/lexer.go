@@ -1297,7 +1297,7 @@ case 60:
           v *= 1048576
       }
   }
-  return yy.TokenInt64(_NUMBER_, v);
+  return yy.TokenInt64(_DECIMAL_NUMBER_, v);
 }
 case 61:
 

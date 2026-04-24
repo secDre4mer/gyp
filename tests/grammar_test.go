@@ -1040,3 +1040,14 @@ func TestIssue57(t *testing.T) {
 	}`)
 	assert.NoError(t, err)
 }
+
+func TestHexXor(t *testing.T) {
+	_, err := gyp.ParseString(`
+  rule TEST {
+    strings:
+      $ = "abcd" xor(0x0F-0x10)
+    condition:
+      all of them
+	}`)
+	assert.NoError(t, err)
+}
